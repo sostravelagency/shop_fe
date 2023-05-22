@@ -21,6 +21,8 @@ export default class rootRoutes extends Component {
             <div>
                 <Header />
                 <Switch>
+                  
+
                     <PrivateRoute path='/account' component={Account} />                    
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/register' component={Register} />
