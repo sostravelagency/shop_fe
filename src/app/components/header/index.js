@@ -60,7 +60,7 @@ class Navigation extends Component {
             <div className="container-fluid">
               <a className="navbar-brand" href="/">
                 {" "}
-                <img src="/img/logo.png" alt="logo" />{" "}
+                <img style={{width: 80}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/FPT_logo_2010.svg/800px-FPT_logo_2010.svg.png" alt="logo" />{" "}
               </a>
               <button
                 className="navbar-toggler navbar-toggler-white"

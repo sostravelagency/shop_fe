@@ -157,11 +157,11 @@ class Shopdetails extends Component {
                                 Cart
                               </button>
                               <p className="offer-price mb-0">
-                                &#x20B9;{row.netPrice}{" "}
+                                ${row.netPrice}{" "}
                                 <i className="mdi mdi-tag-outline" />
                                 <br />
                                 <span className="regular-price">
-                                  &#x20B9;{row.price}{" "}
+                                  ${row.price}{" "}
                                 </span>
                               </p>
                             </div>

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import GroceryStampleDetails from '../../../../services/GroceryStampleDetails';
-import { addToCart } from '../../../../../store/actions/cartActions';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import GroceryStampleDetails from "../../../../services/GroceryStampleDetails";
+import { addToCart } from "../../../../../store/actions/cartActions";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Topsavers = ({ addToCart }) => {
   const [productlist, setProductList] = useState([]);
@@ -37,33 +37,33 @@ const Topsavers = ({ addToCart }) => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: false
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          initialSlide: 3
-        }
+          initialSlide: 3,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -79,7 +79,7 @@ const Topsavers = ({ addToCart }) => {
               <Link
                 to={{
                   pathname: `/shop/${productlist?.slug}`,
-                  state: list
+                  state: list,
                 }}
               >
                 <span className="float-right text-secondary">View All</span>
@@ -98,12 +98,18 @@ const Topsavers = ({ addToCart }) => {
                     <Link
                       to={{
                         pathname: `/p/${row.slug}/${row.id}`,
-                        state: row
+                        state: row,
                       }}
                     >
                       <div className="product-header">
-                        <span className="badge badge-success">{row.discountPer}% OFF</span>
-                        <img className="img-fluid" src={row.photo} alt="product" />
+                        <span className="badge badge-success">
+                          {row.discountPer}% OFF
+                        </span>
+                        <img
+                          className="img-fluid"
+                          src={row.photo}
+                          alt="product"
+                        />
                         {/* <span className="veg text-success mdi mdi-circle" /> */}
                       </div>
                       <div className="product-body">
@@ -111,7 +117,7 @@ const Topsavers = ({ addToCart }) => {
                         <h6>
                           <strong>
                             <span className="mdi mdi-approval" /> Available in
-                          </strong>{' '}
+                          </strong>{" "}
                           - {row.unitSize}
                         </h6>
                       </div>
@@ -125,9 +131,9 @@ const Topsavers = ({ addToCart }) => {
                         <i className="mdi mdi-cart-outline" /> Add To Cart
                       </button>
                       <p className="offer-price mb-0">
-                        &#x20B9;{row.price} <i className="mdi mdi-tag-outline" />
+                        ${row.price} <i className="mdi mdi-tag-outline" />
                         <br />
-                        <span className="regular-price">&#x20B9;{row.netPrice}</span>
+                        <span className="regular-price">${row.netPrice}</span>
                       </p>
                     </div>
                   </div>
